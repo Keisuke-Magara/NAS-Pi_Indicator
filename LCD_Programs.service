@@ -1,0 +1,10 @@
+[Unit]
+Description = LCD_display Program launch daemon
+
+[Service]
+ExecStart = /opt/LCD_Programs/main.out
+Restart = always
+Type = simple
+
+[Install]
+WantedBy = multi-user.target

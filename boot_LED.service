@@ -1,0 +1,10 @@
+[Unit]
+Description=Boot LED Service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/LCD_Programs/boot_LED.out
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

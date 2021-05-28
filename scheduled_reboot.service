@@ -1,0 +1,9 @@
+[Unit]
+Description = Reboot NAS at 4:00 AM everyday.
+
+[Service]
+ExecStart = /opt/LCD_Programs/scheduled_reboot.out
+Type = simple
+
+[Install]
+WantedBy = multi-user.target
