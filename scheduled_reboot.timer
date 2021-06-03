@@ -2,7 +2,7 @@
 Description= time (reboot at 4:00 AM everyday)
 
 [Timer]
-OnCalendar=Mon *-*-* 4-00-00
+OnCalendar=Mon *-*-* 4:00:00
 Persistent=false
 
 [Install]
