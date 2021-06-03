@@ -1,4 +1,4 @@
-sudo apt install wiringPi
+sudo apt install wiringpi
 gcc -o boot_LED.out boot_LED.c -lwiringPi
 gcc -o main.out display.c -lwiringPi
 gcc -o scheduled_reboot.out scheduled_reboot.c -lwiringPi
