@@ -1,3 +1,7 @@
+#Please type "chmod 700 setup.sh" before run this script.
+sudo raspi-config nonint do_i2c 0
+sudo echo -e "dtoverlay=i2c5,pins_12_13" | sudo tee -a /boot/config.txt
+sudo echo -e "dtparam=i2c_vc_baudrate=40000" | sudo tee -a /boot/config.txt
 sudo apt install wiringpi
 gcc -o boot_LED.out boot_LED.c -lwiringPi
 gcc -o main.out display.c -lwiringPi
@@ -11,5 +15,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable LCD_Programs.service
 sudo systemctl active LCD_Ptograms.service
 sudo systemctl enable scheduled_reboot.timer
-echo ""
-echo "Please Reboot to start LCD Programs."
+printf "\n=====Please Reboot to start LCD Programs.====="
