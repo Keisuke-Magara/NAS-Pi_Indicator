@@ -3,28 +3,30 @@
 # To install my software, run `make` and then `make install`.
 
 # Please specify the installation location.
-InstallPath = ./test# usr/local/naspi_indicator
-
+# InstallPath = usr/local/naspi_indicator
+InstallPath = ./test
 
 CC = gcc
 CFLAGS = -O3 -Wall
 CXX = g++
 CXXFLAGS = -O3 -Wall -std=c++17
-RM = rm -rf
-executable = main
+executable = testmain
 
 
 .PHONY: all
 all: $(executable)
 
-main: main.o display.o
+testmain: testmain.o display.o
 	@echo $@
 	$(LINK.cpp) -o $@ $^
 
-main.o: main.cpp display.h
+testmain.o: testmain.cpp display.h
 	$(COMPILE.cpp) $<
 
 display.o: display.c display.h
+	$(COMPILE.c) $<
+
+so1602aw.o: so1602aw.c so1602aw.h
 	$(COMPILE.c) $<
 
 # Copy executable files to InstallPath and enable dependend daemons.
